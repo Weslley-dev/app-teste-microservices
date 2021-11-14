@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+
+    calc:
+      build: calc
+
+    div:
+      build: div
+
+    mult: 
+      build: mult
+
+    soma:
+      build: soma
+
+    sub:
+      build: sub
+
+    nginx:
+        container_name: nginx
+        build: nginx
+        ports:
+          - "8080:80"
+        depends_on:
+          - calc
+          - mult
+          - div
+          - soma
+          - sub
+
+
